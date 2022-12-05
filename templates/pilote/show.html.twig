@@ -1,0 +1,20 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Détails pilote{% endblock %}
+
+{% block body %}
+    
+    <h1>Détails</h1>
+    
+    <p>ID : {{pilote.id}}</p>
+    <p>Nom : {{pilote.nom}}</p>
+    <p>Prénom : {{pilote.prenom}}</p>
+    <p>E-mail : {{pilote.email}}</p>
+    <p>Qualification : {{pilote.qualification.libelle}}</p>
+    
+
+    <div class="col-3">
+        <a href="{{path('app_pilote')}}" class="btn btn-primary">Retour à la liste</a>
+    </div>
+
+{% endblock %}

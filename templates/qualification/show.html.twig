@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Détails qualification{% endblock %}
+
+{% block body %}
+    
+    <h1>Détails</h1>
+    
+    <p>ID : {{qualification.id}}</p>
+    <p>Code : {{qualification.code}}</p>
+    <p>Libellé : {{qualification.libelle}}</p>
+
+    <div class="col-3">
+        <a href="{{path('app_qualification')}}" class="btn btn-primary">Retour à la liste</a>
+    </div>
+
+{% endblock %}

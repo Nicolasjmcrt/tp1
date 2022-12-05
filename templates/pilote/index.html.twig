@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des pilotes{% endblock %}
+
+{% block body %}
+
+    <h1>Pilotes</h1>
+    <table class="table align-middle">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Email</th>
+                <th>Qualification</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pilote in pilotes %}
+            <tr class="vertical-align">
+                <td>{{ pilote.id }}</td>
+                <td>{{ pilote.nom }}</td>
+                <td>{{ pilote.prenom }}</td>
+                <td>{{ pilote.email }}</td>
+                <td>{{ pilote.qualification.libelle }}</td>
+                <td>
+                    <a href="{{ path('pilote_show', {'id': pilote.id}) }}" class="btn btn-primary">show</a>
+                    <a href="{{ path('pilote_edit', {'id': pilote.id}) }}" class="btn btn-warning">edit</a>
+                    <a href="{{ path('pilote_delete', {'id': pilote.id}) }}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan=\"3\">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('pilote_add') }}" class="btn btn-primary mt-3">Ajouter un pilote</a>
+{% endblock %}

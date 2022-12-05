@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{titre}}
+{% endblock %}
+
+{% block body %}
+
+	<h1 class="text-center">{{titre}}</h1>
+	<div class="container d-flex justify-content-center flex-column">
+		<div class="row">
+			<div class="col-md-8 mb-3">
+				{{form_start(form, {'attr': {'novalidate':'novalidate'}})}}
+				{{form_errors(form)}}
+			</div>
+		</div>
+		<div class="row mb-3 d-flex justify-content-center">
+			<div class="col-8">
+				{{form_row(form.nom)}}
+			</div>
+		</div>
+		<div class="row mb-3 d-flex justify-content-center">
+			<div class="col-8">
+				{{form_row(form.prenom)}}
+			</div>
+		</div>
+		<div class="row mb-3 d-flex justify-content-center">
+			<div class="col-8">
+				{{form_row(form.email)}}
+			</div>
+		</div>
+		<div class="row mb-3 d-flex justify-content-center">
+			<div class="col-8">
+				{{form_row(form.qualification)}}
+			</div>
+		</div>
+
+	</div>
+
+	<div class="row mb-3">
+		<div class="col d-flex justify-content-center">
+			<button class="btn btn-primary">Valider</button>
+		</div>
+	</div>
+	{{ form_end(form)}}
+
+	<div class="col mt-5 mb-5 d-flex justify-content-center">
+		<a href="{{path('app_pilote')}}" class="btn btn-primary">Retour à la liste</a>
+	</div>
+
+{% endblock %}

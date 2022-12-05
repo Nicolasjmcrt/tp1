@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{titre}}
+{% endblock %}
+
+{% block body %}
+
+	<h1 class="text-center">{{titre}}</h1>
+	<div class="container d-flex justify-content-center flex-column">
+		<div class="row">
+			<div class="col-md-8 mb-3">
+				{{form_start(form)}}
+				{{form_errors(form)}}
+			</div>
+		</div>
+		<div class="row mb-3 d-flex justify-content-center">
+			<div class="col-8">
+				{{form_row(form.code)}}
+			</div>
+		</div>
+		<div class="row mb-3 d-flex justify-content-center">
+			<div class="col-8">
+				{{form_row(form.libelle)}}
+			</div>
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<div class="col d-flex justify-content-center">
+			<button class="btn btn-primary">Valider</button>
+		</div>
+	</div>
+	{{ form_end(form)}}
+
+	<div class="col mt-5 mb-5 d-flex justify-content-center">
+		<a href="{{path('app_qualification')}}" class="btn btn-primary">Retour à la liste</a>
+	</div>
+
+{% endblock %}
